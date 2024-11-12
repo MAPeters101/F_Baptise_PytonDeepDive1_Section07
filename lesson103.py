@@ -99,7 +99,26 @@ print(fn1.__closure__)
 print(fn2.__closure__)
 print(hex(id(2)))
 print()
+print('+'*30)
 
+def pow(n):
+    def inner(x):
+        return x ** n
+    return inner
+
+square = pow(2)
+print(square.__closure__)
+print(hex(id(2)))
+print(square)
+print(square(5))
+print()
+
+cube = pow(3)
+print(cube.__closure__)
+print(hex(id(3)))
+print(cube)
+print(cube(5))
+print()
 
 
 
