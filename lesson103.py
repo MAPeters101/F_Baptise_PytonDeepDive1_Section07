@@ -165,7 +165,30 @@ print(adders[2].__closure__)
 print(adders[0](10))
 print(adders[1](10))
 print(adders[2](10))
+print()
+print()
 
+def create_adders1():
+    adders = []
+    for n in range(1, 4):
+        adders.append(lambda x, y=n: x + y)
+    return adders
+
+adders = create_adders1()
+print(adders)
+print(n)
+print(adders[0].__closure__)
+print(adders[1].__closure__)
+print(adders[2].__closure__)
+print(adders[0].__code__.co_freevars)
+print(adders[1].__code__.co_freevars)
+print(adders[2].__code__.co_freevars)
+print(adders[0](10))
+print(adders[1](10))
+print(adders[2](10))
+print(adders[0](10, 5))
+print()
+print()
 
 
 
