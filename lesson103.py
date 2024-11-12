@@ -44,7 +44,48 @@ fn()
 
 print(fn.__code__.co_freevars)
 print(fn.__closure__)
+print('='*40)
 
+
+def outer():
+    count = 0
+    def inc():
+        nonlocal count
+        count += 1
+        return count
+    return inc
+
+fn = outer()
+print(fn.__code__.co_freevars)
+print(fn.__closure__)
+print(hex(id(0)))
+
+print(fn())
+print(fn.__closure__)
+print(hex(id(1)))
+print()
+
+def outer1():
+    count = 0
+    def inc1():
+        nonlocal count
+        count += 1
+        return count
+
+    def inc2():
+        nonlocal count
+        count += 1
+        return count
+
+    return inc1, inc2
+
+fn1, fn2 = outer1()
+print(fn1.__code__.co_freevars, fn2.__code__.co_freevars)
+print(fn1.__closure__)
+print(fn2.__closure__)
+print(hex(id(0)))
+
+print()
 
 
 
