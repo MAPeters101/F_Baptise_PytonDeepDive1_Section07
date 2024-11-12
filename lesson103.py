@@ -84,7 +84,20 @@ print(fn1.__code__.co_freevars, fn2.__code__.co_freevars)
 print(fn1.__closure__)
 print(fn2.__closure__)
 print(hex(id(0)))
+print()
 
+print(fn1())
+print(fn1.__code__.co_freevars, fn2.__code__.co_freevars)
+print(fn1.__closure__)
+print(fn2.__closure__)
+print(hex(id(1)))
+print()
+
+print(fn2())
+print(fn1.__code__.co_freevars, fn2.__code__.co_freevars)
+print(fn1.__closure__)
+print(fn2.__closure__)
+print(hex(id(2)))
 print()
 
 
