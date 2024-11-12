@@ -75,10 +75,30 @@ print()
 # my_func6()
 # print(a)
 # print()
+print('='*80)
 
 
+a = 10
+f = lambda n: print(a**n)
+f(2)
+print()
 
+print(True)
+print('a')
 
+def print(x):
+    return 'hello {0}'.format(x)
 
+# print('1')
+# print('world')
+# #print('world', '!')
+# print('2')
+# print()
+del print
 
+print('HERE')
 
+for i in range(10):
+    x = 2 * i
+
+print(x)
