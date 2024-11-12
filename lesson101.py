@@ -30,6 +30,37 @@ def outer_func3():
 outer_func3()
 print()
 
+def outer_func4():
+    x = 'hello4'
+    def inner():
+        nonlocal x
+        x = 'python'
+        print('inner:', x)
+    print('outer(before inner):', x)
+    inner()
+    print('outer(after inner):', x)
+
+outer_func4()
+print('='*80)
+print()
+
+
+def outer_func5():
+    x = 'hello5'
+    def inner1():
+        def inner2():
+            nonlocal x
+            x = 'python'
+            print('inner:', x)
+        inner2()
+    print('outer(before inner1):', x)
+    inner1()
+    print('outer(after inner1):', x)
+
+outer_func5()
+#print('outer(after outer):', x)
+print()
+
 
 
 
