@@ -118,7 +118,61 @@ print(cube.__closure__)
 print(hex(id(3)))
 print(cube)
 print(cube(5))
+print('-'*80)
+
+def adder(n):
+    def inner(x):
+        return x + n
+    return inner
+
+add_1 = adder(1)
+add_2 = adder(2)
+add_3 = adder(3)
+print(add_1.__closure__)
+print(add_2.__closure__)
+print(add_3.__closure__)
+print(hex(id(1)))
+print(hex(id(2)))
+print(hex(id(3)))
+print(add_1(10))
+print(add_2(10))
+print(add_3(10))
 print()
+
+adders = []
+for n in range(1, 4):
+    adders.append(lambda x: x + n)
+
+print(adders)
+print(n)
+print(adders[0].__closure__)
+print(adders[0](10))
+print('='*80)
+
+
+def create_adders():
+    adders = []
+    for n in range(1, 4):
+        adders.append(lambda x: x + n)
+    return adders
+
+adders = create_adders()
+print(adders)
+print(n)
+print(adders[0].__closure__)
+print(adders[1].__closure__)
+print(adders[2].__closure__)
+print(adders[0](10))
+print(adders[1](10))
+print(adders[2](10))
+
+
+
+
+
+
+
+
 
 
 
