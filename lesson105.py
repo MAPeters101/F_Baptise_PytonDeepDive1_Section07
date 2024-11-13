@@ -18,13 +18,19 @@ def counter(fn):
         return fn(*args, **kwargs)
     return inner
 
-def mult(a, b):
+def add(a, b):
     return a + b
 
-def add(a, b):
+def mult(a, b):
     return a * b
 
 counter_add = counter(add)
+print(counter_add.__closure__)
+print(counter_add.__code__.co_freevars)
+print(counter_add(10, 20))
+result = counter_add(10, 20)
+print(result)
 
-
+counter_mult = counter(mult)
+print(counter_mult(2, 5))
 
