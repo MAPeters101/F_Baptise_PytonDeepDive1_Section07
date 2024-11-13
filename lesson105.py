@@ -74,6 +74,42 @@ print(counters, c)
 print(counted_mult(10, 20))
 print(counted_mult(20, 30))
 print(counters, c)
+print('+'*40)
+
+
+def fact(n):
+    product = 1
+    for i in range(2, n+1):
+        product *= i
+    return product
+
+print(fact(3))
+print(fact(5))
+
+counted_fact = counter(fact, c)
+print(counted_fact(5))
+print(counted_fact(5))
+print(c)
+
+fact = counter(fact, c)
+print(fact.__closure__)
+print(fact(3))
+print(fact(5))
+print(fact(5))
+print(c)
+add = counter(add, c)
+mult = counter(mult, c)
+print(c)
+print(add(1, 2))
+print(c)
+print(mult(2, 3))
+print(c)
+print(c)
+
+
+
+
+
 
 
 
